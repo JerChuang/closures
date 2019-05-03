@@ -1,6 +1,10 @@
 var wrapLog = function (callback, name) {
   /* your code here */
- console.log( callback());
+
+  return function (...theArgs) {
+    console.log (name + "(" + Object.values(arguments).join() + ") =>" ,callback(...theArgs) );
+
+  };
 
 };
 
